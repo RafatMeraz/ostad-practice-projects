@@ -22,6 +22,7 @@ void main(List<String> arguments) {
   var result = 0.0;
 
   if (operation == '+') {
+
     // Trying to parse string to double and if not success then we are using
     // default value
     result = (double.tryParse(firstNumber ?? '0') ?? 0) +
