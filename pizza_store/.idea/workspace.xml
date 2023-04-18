@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4eac846-f0d0-4ade-940b-a98e1919a55e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analysis_options.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pizza_store.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizza_store.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/pizza_store_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/bin/calculator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/bin/calculator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,29 +73,50 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681026602805</updated>
-      <workItem from="1681026604103" duration="932000" />
+      <workItem from="1681026604103" duration="1636000" />
+      <workItem from="1681402574879" duration="10000" />
     </task>
+    <task id="LOCAL-00001" summary="pizza store project has been added">
+      <created>1681027616663</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681027616663</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pizza store project has been added" />
+    <option name="LAST_COMMIT_MESSAGE" value="pizza store project has been added" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1865" height="265" key="GridCell.Tab.0.bottom" timestamp="1681027562154">
+    <state x="508" y="39" key="CommitChangelistDialog2" timestamp="1681027615936">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1865" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1681027562154" />
-    <state width="1865" height="265" key="GridCell.Tab.0.center" timestamp="1681027562154">
+    <state x="508" y="39" key="CommitChangelistDialog2/0.0.1920.1032@0.0.1920.1032" timestamp="1681027615936" />
+    <state width="1865" height="265" key="GridCell.Tab.0.bottom" timestamp="1681029206521">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1865" height="265" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1681027562154" />
-    <state width="1865" height="265" key="GridCell.Tab.0.left" timestamp="1681027562153">
+    <state width="1865" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1681029206521" />
+    <state width="1865" height="265" key="GridCell.Tab.0.center" timestamp="1681029206521">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1865" height="265" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1681027562153" />
-    <state width="1865" height="265" key="GridCell.Tab.0.right" timestamp="1681027562154">
+    <state width="1865" height="265" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1681029206521" />
+    <state width="1865" height="265" key="GridCell.Tab.0.left" timestamp="1681029206521">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1865" height="265" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1681027562154" />
+    <state width="1865" height="265" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1681029206521" />
+    <state width="1865" height="265" key="GridCell.Tab.0.right" timestamp="1681029206521">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1865" height="265" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1681029206521" />
+    <state x="452" y="184" key="Vcs.Push.Dialog.v2" timestamp="1681027619178">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="452" y="184" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1681027619178" />
   </component>
 </project>
