@@ -2,15 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-/*
-From this project, you will learn
-- Theme
-- use of function
-- Elevated button
-- Random from math
-- basic widgets like text, colum, expanded
- */
-
 void main() {
   runApp(const GuessTheNumberApp());
 }
