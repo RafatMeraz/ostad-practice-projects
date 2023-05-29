@@ -20,5 +20,6 @@ This repo is a collection of basic applications serves as a valuable resource fo
 ## To clone the "Ostad Practice Projects" repository
 
 ```
-https://github.com/RafatMeraz/ostad-practice-projects.git
+ git clone https://github.com/RafatMeraz/ostad-practice-projects.git
 ```
+
