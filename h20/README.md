@@ -8,3 +8,9 @@ H2O is a mobile application that tracks your regular water consumptions. Other f
  - Monthly report 
  - Monthly report 
  - Reminder
+
+Screenshots
+<details>
+ <summary>Splash Screen </summary>
+ <img src="https://github.com/RafatMeraz/ostad-practice-projects/assets/53111065/4fcf01f7-7f2e-449e-bd38-d24b11064cf7" alt="s,2" width="200" height="400">
+ </details>
