@@ -4,6 +4,8 @@ This repo is a collection of basic applications serves as a valuable resource fo
 
 # ScreenShots
 
+arif for testing
+
  <details>
  <summary>Portfolio </summary>
  <img src="https://github.com/RafatMeraz/ostad-practice-projects/assets/53111065/d6afd43d-7ca3-4ba3-8944-34f91823140a" alt="s,2" width="200" height="400">
