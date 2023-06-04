@@ -1,8 +1,8 @@
 import 'dart:io';
 
 double sg =0.0;
-int totalCredit = 0;
-double calculator(int marks, int credit){
+double totalCredit = 0.0;
+double calculator(double marks, double credit){
   if(marks<=100 && marks>=80){
     sg += (4.00 * credit);
     totalCredit+=credit;
@@ -52,20 +52,21 @@ double calculator(int marks, int credit){
 }
 
 void main(){
-  int n, marks, credit;
+  int n;
+  double marks, credit;
   print("Enter Number of courses : ");
   String str = stdin.readLineSync()!;
   n = int.parse(str);
 
   for(int i=0; i<n; i++){
 
-    print("Enter course no ${i+1} : ");
+    print("Enter Mark of Course No ${i+1} : ");
     String str1 = stdin.readLineSync()!;
-    marks = int.parse(str1);
+    marks = double.parse(str1);
 
-    print("Enter Credit for course no ${i+1} : ");
+    print("Enter Credit of Course No ${i+1} : ");
     String str2 = stdin.readLineSync()!;
-    credit = int.parse(str2);
+    credit = double.parse(str2);
 
     calculator(marks, credit);
 
