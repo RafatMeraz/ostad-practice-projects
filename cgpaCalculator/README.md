@@ -1,1 +1,1 @@
-
+CGPA calculator is the practice project using dart. It is a console application. CGPA calculator calculate your CGPA easily. At first you have to input the course number and input the marks for every course with the course credit. After completeing the input part CGPA will shown in the console window.
