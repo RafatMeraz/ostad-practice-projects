@@ -8,7 +8,7 @@ class WeeklyReportScreen extends StatelessWidget {
         title: Text('Weekly Report'),
       ),
       body: Center(
-        child: Text('This is the Weekly Report Screen'),
+        child: Text('This is the Weekly  '),
       ),
     );
   }
