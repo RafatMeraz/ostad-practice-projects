@@ -1,6 +1,7 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:gradient_color_generator/widget/color_text.dart';
+import 'package:gradient_color_generator/widget/tap_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -43,12 +44,18 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          child: Center(
-            child: ElevatedButton(
-              onPressed: (){
-                updateColor();
-              },
-              child: Text('Tap'),
+          child: SafeArea(
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ColorText(color: firstColor),
+                  TapButton(onTap: updateColor),
+                  ColorText(color: secondColor),
+                ],
+              ),
             ),
           ),
         )
@@ -62,8 +69,5 @@ class _HomeScreenState extends State<HomeScreen> {
         colorValues.add(random.nextInt(256));
       }
     });
-
-
-    print('F: $firstColor, L: $secondColor');
   }
 }
