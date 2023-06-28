@@ -1,16 +1,7 @@
-# gradient_color_generator
+# Gradient Color Generator
 
-Generate random gredient color and copy the color code
+- Randomized gradient color on button tap
+- Tap on color code to copy
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  <img src="https://github.com/nbakh16/ostad-practice-projects/assets/38786346/cc50cd43-8a93-417c-9677-ee26096ba2cb" alt="random-gradient-gif" width="250">
+ 
