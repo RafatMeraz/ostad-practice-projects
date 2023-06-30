@@ -31,7 +31,7 @@ class H2OApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => SplashScreen(),
-          '/home': (context) => HomeScreen(),
+          '/home': (context) => const HomeScreen(),
         },
       ),
     );

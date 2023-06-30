@@ -8,11 +8,13 @@ import 'daily_report_screen.dart';
 import 'monthly_report_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('H20'),
+        title: const Text('H20'),
       ),
       body: Center(
         child: Column(
@@ -20,19 +22,52 @@ class HomeScreen extends StatelessWidget {
           children: [
             Consumer<WaterTracker>(
               builder: (context, waterTracker, _) {
-                return Text(
-                  'Water Intake: ${waterTracker.waterIntake} ml',
-                  style: TextStyle(fontSize: 24),
+                return Stack(
+                  children: [
+                    SizedBox(
+                      height: 200,
+                      width: 200,
+                      child: CircularProgressIndicator(
+                        value: waterTracker.targetFullFilled,
+                        backgroundColor: Theme.of(context).primaryColorLight,
+                        color: waterTracker.targetFullFilled >= 1
+                            ? Colors.green
+                            : Theme.of(context).primaryColorDark,
+                        strokeWidth: 10,
+                      ),
+                    ),
+                    Positioned.fill(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.water_drop_outlined,
+                            color: Colors.blue,
+                            size: 36,
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            '${waterTracker.waterIntakeTarget}/${waterTracker.waterIntake} ml',
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 );
               },
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
+
             ElevatedButton(
               onPressed: () {
                 // Increment water intake
-                Provider.of<WaterTracker>(context, listen: false).incrementWaterIntake(250);
+                Provider.of<WaterTracker>(context, listen: false)
+                    .incrementWaterIntake(250);
               },
-              child: Text('Add 250 ml'),
+              child: const Text('Add 250 ml'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -41,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => DailyReportScreen()),
                 );
               },
-              child: Text('Daily Report'),
+              child: const Text('Daily Report'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -50,16 +85,17 @@ class HomeScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => WeeklyReportScreen()),
                 );
               },
-              child: Text('Weekly Report'),
+              child: const Text('Weekly Report'),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MonthlyReportScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => MonthlyReportScreen()),
                 );
               },
-              child: Text('Monthly Report'),
+              child: const Text('Monthly Report'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -68,7 +104,7 @@ class HomeScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => ReminderScreen()),
                 );
               },
-              child: Text('Set Reminder'),
+              child: const Text('Set Reminder'),
             ),
           ],
         ),
