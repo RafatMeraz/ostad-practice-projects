@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:h20/presentation/screens/reminder_screen.dart';
 import 'package:h20/presentation/screens/weekly_report_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:h20/models/water_tracker.dart';
+import 'package:h20/data/models/water_tracker.dart';
 
 import 'daily_report_screen.dart';
 import 'monthly_report_screen.dart';
