@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:h20/presentation/screens/reminder_screen.dart';
 import 'package:h20/presentation/screens/weekly_report_screen.dart';
+import 'package:h20/presentation/widgets/scroller_button_list.dart';
 import 'package:provider/provider.dart';
 import 'package:h20/data/models/water_tracker.dart';
 
@@ -60,14 +61,15 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             const SizedBox(height: 16),
-
-            ElevatedButton(
-              onPressed: () {
-                // Increment water intake
-                Provider.of<WaterTracker>(context, listen: false)
-                    .incrementWaterIntake(250);
-              },
-              child: const Text('Add 250 ml'),
+            ScrollerButtonList(
+              scrollDirection: Axis.horizontal,
+              selectedIndex: 1,
+              items: [
+                ScrollerButtonItem('250 ml', 250),
+                ScrollerButtonItem('500 ml', 500),
+                ScrollerButtonItem('800 ml', 800),
+                ScrollerButtonItem('1L', 1000),
+              ],
             ),
             ElevatedButton(
               onPressed: () {
