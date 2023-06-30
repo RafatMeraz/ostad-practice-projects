@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:h20/data/models/water_tracker.dart';
+import 'package:get/get.dart';
+import 'package:h20/presentation/state_managers/water_tracker.dart';
 import 'package:h20/presentation/screens/home_screen.dart';
 import 'package:h20/presentation/screens/splash_screen.dart';
 
@@ -13,18 +13,13 @@ class H2OApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<WaterTracker>(
-          create: (_) => WaterTracker(),
-        ),
-      ],
-      child: MaterialApp(
+    return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           brightness: Brightness.light,
           primarySwatch: Colors.blue,
         ),
+        initialBinding: ControllerBindings(),
         darkTheme: ThemeData(
           brightness: Brightness.dark,
         ),
@@ -33,7 +28,14 @@ class H2OApp extends StatelessWidget {
           '/': (context) => SplashScreen(),
           '/home': (context) => const HomeScreen(),
         },
-      ),
     );
   }
+}
+
+class ControllerBindings extends Bindings {
+  @override
+  void dependencies() {
+    Get.put<WaterTracker>(WaterTracker());
+  }
+
 }

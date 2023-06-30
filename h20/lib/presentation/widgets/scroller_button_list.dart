@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:h20/data/models/water_tracker.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
+import 'package:h20/presentation/state_managers/water_tracker.dart';
 
 class ScrollerButtonItem {
   final String title;
@@ -49,7 +49,7 @@ class _ScrollerButtonListState extends State<ScrollerButtonList> {
               ? ElevatedButton(
                   onPressed: () {
                     // Increment water intake
-                    Provider.of<WaterTracker>(context, listen: false)
+                    Get.find<WaterTracker>()
                         .incrementWaterIntake(
                             widget.items.elementAt(index).value);
                   },

@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:h20/presentation/screens/reminder_screen.dart';
-import 'package:h20/presentation/screens/weekly_report_screen.dart';
+import 'package:get/get.dart';
 import 'package:h20/presentation/widgets/scroller_button_list.dart';
-import 'package:provider/provider.dart';
-import 'package:h20/data/models/water_tracker.dart';
-
-import 'daily_report_screen.dart';
-import 'monthly_report_screen.dart';
+import 'package:h20/presentation/state_managers/water_tracker.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,8 +16,8 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Consumer<WaterTracker>(
-              builder: (context, waterTracker, _) {
+            GetBuilder<WaterTracker>(
+              builder: (waterTracker) {
                 return Stack(
                   children: [
                     SizedBox(
@@ -71,43 +66,9 @@ class HomeScreen extends StatelessWidget {
                 ScrollerButtonItem('1L', 1000),
               ],
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DailyReportScreen()),
-                );
-              },
-              child: const Text('Daily Report'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => WeeklyReportScreen()),
-                );
-              },
-              child: const Text('Weekly Report'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => MonthlyReportScreen()),
-                );
-              },
-              child: const Text('Monthly Report'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ReminderScreen()),
-                );
-              },
-              child: const Text('Set Reminder'),
-            ),
+            // ListView.builder(itemBuilder: (context, index) {
+            //
+            // })
           ],
         ),
       ),

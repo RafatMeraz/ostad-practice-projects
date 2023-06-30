@@ -1,6 +1,6 @@
-import 'package:flutter/foundation.dart';
+import 'package:get/get.dart';
 
-class WaterTracker with ChangeNotifier {
+class WaterTracker extends GetxController {
   int _waterIntake = 0;
   int _waterIntakeTarget = 12000;
 
@@ -13,6 +13,6 @@ class WaterTracker with ChangeNotifier {
 
   void incrementWaterIntake(int amount) {
     _waterIntake += amount;
-    notifyListeners();
+    update();
   }
 }
