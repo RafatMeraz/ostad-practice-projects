@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:h20/presentation/state_managers/water_tracker_history_controller.dart';
 import 'package:h20/presentation/widgets/scroller_button_list.dart';
 import 'package:h20/presentation/state_managers/water_tracker.dart';
 
@@ -12,10 +13,10 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('H20'),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(height: 32,),
             GetBuilder<WaterTracker>(
               builder: (waterTracker) {
                 return Stack(
@@ -55,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
             ScrollerButtonList(
               scrollDirection: Axis.horizontal,
               selectedIndex: 1,
@@ -66,9 +67,39 @@ class HomeScreen extends StatelessWidget {
                 ScrollerButtonItem('1L', 1000),
               ],
             ),
-            // ListView.builder(itemBuilder: (context, index) {
-            //
-            // })
+            const SizedBox(height: 24,),
+            Container(
+              alignment: Alignment.centerLeft,
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              child: Text("Today's Record",
+                textAlign: TextAlign.start,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontSize: 16
+                ),
+              ),
+            ),
+            const Divider(height: 16, indent: 16,),
+            GetBuilder<WaterTrackerHistoryController>(
+                builder: (historyController) {
+              return ListView.builder(
+                  primary: false,
+                  shrinkWrap: true,
+                  reverse: true,
+                  itemCount: historyController.historyList.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text(historyController
+                          .historyList[index].consumeAmount
+                          .toString()),
+                      trailing: IconButton(
+                        onPressed: () {
+                          historyController.deleteWaterConsume(index);
+                        },
+                        icon: const Icon(Icons.delete_forever_outlined),
+                      ),
+                    );
+                  });
+            })
           ],
         ),
       ),

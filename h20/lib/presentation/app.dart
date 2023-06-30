@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:h20/presentation/state_managers/water_tracker.dart';
 import 'package:h20/presentation/screens/home_screen.dart';
 import 'package:h20/presentation/screens/splash_screen.dart';
+import 'package:h20/presentation/state_managers/water_tracker_history_controller.dart';
 
 void main() {
   runApp(const H2OApp());
@@ -36,6 +37,6 @@ class ControllerBindings extends Bindings {
   @override
   void dependencies() {
     Get.put<WaterTracker>(WaterTracker());
+    Get.put<WaterTrackerHistoryController>(WaterTrackerHistoryController());
   }
-
 }
