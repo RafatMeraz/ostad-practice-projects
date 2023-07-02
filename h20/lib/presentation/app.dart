@@ -1,22 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:h20/presentation/state_managers/water_tracker.dart';
+import 'package:h20/presentation/screens/home_screen.dart';
 import 'package:h20/presentation/screens/splash_screen.dart';
-import 'package:h20/presentation/utils/color_utils.dart';
+import 'package:h20/presentation/state_managers/water_tracker_history_controller.dart';
+
+void main() {
+  runApp(const H2OApp());
+}
 
 class H2OApp extends StatelessWidget {
   const H2OApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: ColorUtils.getMaterialColor(ColorUtils.spanishSkyBlue),
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: ColorUtils.getMaterialColor(ColorUtils.spanishSkyBlue),
-      ),
-      home: const SplashScreen(),
+    return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.light,
+          primarySwatch: Colors.blue,
+        ),
+        initialBinding: ControllerBindings(),
+        darkTheme: ThemeData(
+          brightness: Brightness.dark,
+        ),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => SplashScreen(),
+          '/home': (context) => const HomeScreen(),
+        },
     );
+  }
+}
+
+class ControllerBindings extends Bindings {
+  @override
+  void dependencies() {
+    Get.put<WaterTracker>(WaterTracker());
+    Get.put<WaterTrackerHistoryController>(WaterTrackerHistoryController());
   }
 }
