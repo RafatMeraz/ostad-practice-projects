@@ -4,8 +4,24 @@ import 'package:h20/presentation/state_managers/water_tracker_history_controller
 import 'package:h20/presentation/widgets/scroller_button_list.dart';
 import 'package:h20/presentation/state_managers/water_tracker.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final date = DateTime.now();
+      Get.find<WaterTrackerHistoryController>().getWaterTracks(
+          date.day, date.month, date.year);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +105,7 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return ListTile(
                       title: Text(historyController
-                          .historyList[index].consumeAmount
+                          .historyList[index].amount
                           .toString()),
                       trailing: IconButton(
                         onPressed: () {

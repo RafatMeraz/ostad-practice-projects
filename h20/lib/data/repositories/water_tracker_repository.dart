@@ -9,4 +9,8 @@ class WaterTrackerRepository {
   Future<bool> addNewWaterTrack(WaterTrack waterTrack) {
     return _waterTrackerDataSource.addNewWaterTrack(waterTrack);
   }
+
+  Future<List<WaterTrack>> getDailyWaterTrack(int date, int month, int year) {
+    return _waterTrackerDataSource.getWaterTrackDailyHistory(date, month, year);
+  }
 }

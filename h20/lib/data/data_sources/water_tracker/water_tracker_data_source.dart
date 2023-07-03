@@ -5,7 +5,7 @@ abstract class WaterTrackerDataSource {
 
   Future<void> deleteWaterTrack(int id);
 
-  Future<void> getWaterTrackDailyHistory(int date, int month, int year);
+  Future<List<WaterTrack>> getWaterTrackDailyHistory(int date, int month, int year);
 
   Future<void> getWaterTrackMonthlyHistory(int month, int year);
 }

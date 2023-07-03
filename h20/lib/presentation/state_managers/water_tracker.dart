@@ -14,14 +14,10 @@ class WaterTracker extends GetxController {
   double get targetFullFilled =>
       _waterIntake == 0 ? 0 : (_waterIntake / _waterIntakeTarget);
 
-  void incrementWaterIntake(int amount) {
+  Future<void> incrementWaterIntake(int amount) async {
     _waterIntake += amount;
-    final waterTrack = WaterTrack(
-        DateTime.now().millisecondsSinceEpoch,
-        DateTime.now().millisecondsSinceEpoch,
-        amount
-    );
-    Get.find<WaterTrackerRepository>().addNewWaterTrack(waterTrack);
+    final waterTrack = WaterTrack(amount: amount);
+    await Get.find<WaterTrackerRepository>().addNewWaterTrack(waterTrack);
     Get.find<WaterTrackerHistoryController>().addWaterConsume(waterTrack);
     update();
   }

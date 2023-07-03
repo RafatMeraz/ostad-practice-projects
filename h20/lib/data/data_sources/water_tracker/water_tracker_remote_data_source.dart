@@ -10,7 +10,7 @@ class WaterTrackerRemoteDataSource extends WaterTrackerDataSource {
   }
 
   @override
-  Future<void> getWaterTrackDailyHistory(int date, int month, int year) {
+  Future<List<WaterTrack>> getWaterTrackDailyHistory(int date, int month, int year) {
     // TODO: implement getWaterTrackDailyHistory
     throw UnimplementedError();
   }
