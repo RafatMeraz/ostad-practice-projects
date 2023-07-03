@@ -7,5 +7,5 @@ import 'package:h20/services/local_database_service/database_provider.dart';
 Future<void> initialize() async {
   final database = await DBProvider.db.database;
   Get.lazyPut(() => WaterTrackerLocalDataSource(database));
-  Get.lazyPut(() => WaterTrackerRepository(Get.find()));
+  Get.lazyPut(() => WaterTrackerRepository(Get.find<WaterTrackerLocalDataSource>()));
 }

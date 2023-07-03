@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:h20/data/models/water_track.dart';
+import 'package:h20/data/repositories/water_tracker_repository.dart';
 import 'package:h20/presentation/state_managers/water_tracker_history_controller.dart';
 
 class WaterTracker extends GetxController {
@@ -15,11 +16,13 @@ class WaterTracker extends GetxController {
 
   void incrementWaterIntake(int amount) {
     _waterIntake += amount;
-    Get.find<WaterTrackerHistoryController>().addWaterConsume(WaterTrack(
-      DateTime.now().millisecondsSinceEpoch,
-      DateTime.now().millisecondsSinceEpoch,
-      amount
-    ));
+    final waterTrack = WaterTrack(
+        DateTime.now().millisecondsSinceEpoch,
+        DateTime.now().millisecondsSinceEpoch,
+        amount
+    );
+    Get.find<WaterTrackerRepository>().addNewWaterTrack(waterTrack);
+    Get.find<WaterTrackerHistoryController>().addWaterConsume(waterTrack);
     update();
   }
 }
