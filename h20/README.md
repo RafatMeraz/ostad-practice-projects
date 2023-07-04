@@ -20,5 +20,5 @@ Screenshots
  </details>
 <details>
  <summary>Home Screen </summary>
- <img src="https://github.com/RafatMeraz/ostad-practice-projects/assets/53111065/f6fb4d0e-0c9c-4365-828f-04f5bc983211" alt="s,2" width="200" height="400">
+ <img src="https://github.com/RafatMeraz/ostad-practice-projects/assets/53111065/4b1cacd9-1292-428f-b97b-a7ea97f6f476" alt="s,2" width="200" height="400">
  </details>
