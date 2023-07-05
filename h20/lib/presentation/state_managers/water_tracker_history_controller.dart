@@ -12,7 +12,9 @@ class WaterTrackerHistoryController extends GetxController {
     update();
   }
 
-  void deleteWaterConsume(int index) {
+  Future<void> deleteWaterConsume(int index) async {
+    await Get.find<WaterTrackerRepository>()
+        .deleteWaterTrack(_list.elementAt(index).id!);
     _list.removeAt(index);
     update();
   }

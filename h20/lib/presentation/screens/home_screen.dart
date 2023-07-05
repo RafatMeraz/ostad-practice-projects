@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:h20/presentation/state_managers/water_tracker_history_controller.dart';
+import 'package:h20/presentation/utils/date_utils.dart';
 import 'package:h20/presentation/widgets/scroller_button_list.dart';
 import 'package:h20/presentation/state_managers/water_tracker.dart';
 
@@ -97,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const Divider(height: 16, indent: 16,),
             GetBuilder<WaterTrackerHistoryController>(
                 builder: (historyController) {
-              return ListView.builder(
+              return ListView.separated(
                   primary: false,
                   shrinkWrap: true,
                   reverse: true,
@@ -107,6 +108,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       title: Text(historyController
                           .historyList[index].amount
                           .toString()),
+                      subtitle: Text(DateTimeUtils.formatDateTimeFromString(
+                          historyController.historyList[index].timestamp ??
+                              '')),
                       trailing: IconButton(
                         onPressed: () {
                           historyController.deleteWaterConsume(index);
@@ -114,7 +118,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         icon: const Icon(Icons.delete_forever_outlined),
                       ),
                     );
-                  });
+                  },
+                separatorBuilder: (_, __) {
+                    return const Divider(
+                      height: 0,
+                    );
+                },
+              );
             })
           ],
         ),
