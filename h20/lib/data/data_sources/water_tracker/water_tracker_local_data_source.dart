@@ -17,9 +17,9 @@ class WaterTrackerLocalDataSource extends WaterTrackerDataSource {
   }
 
   @override
-  Future<void> deleteWaterTrack(int id) {
-    // TODO: implement deleteWaterTrack
-    throw UnimplementedError();
+  Future<void> deleteWaterTrack(int id) async {
+    await _database.delete(WaterTrackerTableUtils.tableName,
+        where: "${WaterTrackerTableUtils.columnId} = ?", whereArgs: [id]);
   }
 
   @override

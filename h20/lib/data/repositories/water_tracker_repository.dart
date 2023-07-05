@@ -13,4 +13,8 @@ class WaterTrackerRepository {
   Future<List<WaterTrack>> getDailyWaterTrack(int date, int month, int year) {
     return _waterTrackerDataSource.getWaterTrackDailyHistory(date, month, year);
   }
+
+  Future<void> deleteWaterTrack(int id) async {
+    await _waterTrackerDataSource.deleteWaterTrack(id);
+  }
 }
