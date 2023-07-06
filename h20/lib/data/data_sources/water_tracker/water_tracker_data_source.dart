@@ -1,9 +1,11 @@
+import 'package:h20/data/models/water_track.dart';
+
 abstract class WaterTrackerDataSource {
-  Future<void> addNewWaterTrack(int amount, int timestamp);
+  Future<bool> addNewWaterTrack(WaterTrack waterTrack);
 
   Future<void> deleteWaterTrack(int id);
 
-  Future<void> getWaterTrackDailyHistory(int date, int month, int year);
+  Future<List<WaterTrack>> getWaterTrackDailyHistory(int date, int month, int year);
 
   Future<void> getWaterTrackMonthlyHistory(int month, int year);
 }

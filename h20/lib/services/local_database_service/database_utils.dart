@@ -7,6 +7,6 @@ class WaterTrackerTableUtils {
 
   static get tableCreationQuery => "CREATE TABLE $tableName ("
       "$columnId INTEGER PRIMARY KEY,"
-      "$columnTimeStamp INTEGER NOT NULL,"
+      "$columnTimeStamp DATE DEFAULT (datetime('now','localtime')),"
       "$columnAmount INTEGER NOT NULL)";
 }

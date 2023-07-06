@@ -1,11 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:h20/presentation/state_managers/water_tracker_history_controller.dart';
+import 'package:h20/presentation/utils/date_utils.dart';
 import 'package:h20/presentation/widgets/scroller_button_list.dart';
 import 'package:h20/presentation/state_managers/water_tracker.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final date = DateTime.now();
+      Get.find<WaterTrackerHistoryController>().getWaterTracks(
+          date.day, date.month, date.year);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +98,7 @@ class HomeScreen extends StatelessWidget {
             const Divider(height: 16, indent: 16,),
             GetBuilder<WaterTrackerHistoryController>(
                 builder: (historyController) {
-              return ListView.builder(
+              return ListView.separated(
                   primary: false,
                   shrinkWrap: true,
                   reverse: true,
@@ -89,8 +106,11 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return ListTile(
                       title: Text(historyController
-                          .historyList[index].consumeAmount
+                          .historyList[index].amount
                           .toString()),
+                      subtitle: Text(DateTimeUtils.formatDateTimeFromString(
+                          historyController.historyList[index].timestamp ??
+                              '')),
                       trailing: IconButton(
                         onPressed: () {
                           historyController.deleteWaterConsume(index);
@@ -98,7 +118,13 @@ class HomeScreen extends StatelessWidget {
                         icon: const Icon(Icons.delete_forever_outlined),
                       ),
                     );
-                  });
+                  },
+                separatorBuilder: (_, __) {
+                    return const Divider(
+                      height: 0,
+                    );
+                },
+              );
             })
           ],
         ),
