@@ -22,4 +22,9 @@ class WaterTracker extends GetxController {
     Get.find<WaterTrackerHistoryController>().addWaterConsume(waterTrack);
     update();
   }
+
+  void removeWaterIntake(int amount) {
+    _waterIntake -= amount;
+    update();
+  }
 }

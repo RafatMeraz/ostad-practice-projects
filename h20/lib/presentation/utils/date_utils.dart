@@ -8,4 +8,8 @@ class DateTimeUtils {
     return DateFormat('mm:hha, EEEE d MMM, yyyy')
         .format(DateTime.parse(strDateTime));
   }
+
+  static bool checkIfDateIsToday(String dateTime) {
+    return DateTime.parse(dateTime).difference(DateTime.now()).inDays < 1;
+  }
 }
