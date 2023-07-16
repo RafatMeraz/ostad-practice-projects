@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:h20/dependency_manager.dart';
+import 'package:h20/app/dependency_manager.dart';
 import 'package:h20/presentation/screens/home_screen.dart';
 import 'package:h20/presentation/screens/splash_screen.dart';
 
