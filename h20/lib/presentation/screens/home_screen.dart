@@ -113,7 +113,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               '')),
                       trailing: IconButton(
                         onPressed: () {
-                          historyController.deleteWaterConsume(index);
+                          historyController.deleteWaterConsume(index,
+                              historyController.historyList.elementAt(index));
                         },
                         icon: const Icon(Icons.delete_forever_outlined),
                       ),

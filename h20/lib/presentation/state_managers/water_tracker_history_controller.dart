@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:h20/data/models/water_track.dart';
 import 'package:h20/data/repositories/water_tracker_repository.dart';
+import 'package:h20/presentation/state_managers/water_tracker.dart';
+import 'package:h20/presentation/utils/date_utils.dart';
 
 class WaterTrackerHistoryController extends GetxController {
   List<WaterTrack> _list = [];
@@ -12,16 +14,24 @@ class WaterTrackerHistoryController extends GetxController {
     update();
   }
 
-  Future<void> deleteWaterConsume(int index) async {
+  Future<void> deleteWaterConsume(int index, WaterTrack waterTrack) async {
     await Get.find<WaterTrackerRepository>()
         .deleteWaterTrack(_list.elementAt(index).id!);
     _list.removeAt(index);
+    if (DateTimeUtils.checkIfDateIsToday(waterTrack.timestamp!)) {
+      Get.find<WaterTracker>().removeWaterIntake(waterTrack.amount);
+    }
     update();
   }
 
   Future<void> getWaterTracks(int date, int month, int year) async {
     _list = await Get.find<WaterTrackerRepository>()
         .getDailyWaterTrack(date, month, year);
+    int totalAmount = 0;
+    for (WaterTrack track in _list) {
+      totalAmount += track.amount;
+    }
+    Get.find<WaterTracker>().initialization(totalAmount);
     update();
   }
 }

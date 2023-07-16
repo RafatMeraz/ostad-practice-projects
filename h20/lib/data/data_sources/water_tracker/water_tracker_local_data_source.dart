@@ -10,10 +10,9 @@ class WaterTrackerLocalDataSource extends WaterTrackerDataSource {
   WaterTrackerLocalDataSource(this._database);
 
   @override
-  Future<bool> addNewWaterTrack(WaterTrack waterTrack) async {
+  Future<int> addNewWaterTrack(WaterTrack waterTrack) async {
     return await _database.insert(
-            WaterTrackerTableUtils.tableName, waterTrack.toMap()) !=
-        0;
+            WaterTrackerTableUtils.tableName, waterTrack.toMap());
   }
 
   @override

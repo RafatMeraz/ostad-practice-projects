@@ -6,7 +6,7 @@ class WaterTrackerRepository {
 
   WaterTrackerRepository(this._waterTrackerDataSource);
 
-  Future<bool> addNewWaterTrack(WaterTrack waterTrack) {
+  Future<int> addNewWaterTrack(WaterTrack waterTrack) {
     return _waterTrackerDataSource.addNewWaterTrack(waterTrack);
   }
 

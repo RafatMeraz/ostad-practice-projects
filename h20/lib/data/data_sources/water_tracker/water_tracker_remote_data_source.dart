@@ -22,7 +22,7 @@ class WaterTrackerRemoteDataSource extends WaterTrackerDataSource {
   }
 
   @override
-  Future<bool> addNewWaterTrack(WaterTrack waterTrack) {
+  Future<int> addNewWaterTrack(WaterTrack waterTrack) {
     // TODO: implement addNewWaterTrack
     throw UnimplementedError();
   }
