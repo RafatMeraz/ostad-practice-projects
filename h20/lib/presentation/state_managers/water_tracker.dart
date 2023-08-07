@@ -22,9 +22,13 @@ class WaterTracker extends GetxController {
   Future<void> incrementWaterIntake(int amount) async {
     _waterIntake += amount;
     final waterTrack = WaterTrack(amount: amount, timestamp: DateTime.now().toString());
-    final id = await Get.find<WaterTrackerRepository>().addNewWaterTrack(waterTrack);
-    waterTrack.id = id;
-    Get.find<WaterTrackerHistoryController>().addWaterConsume(waterTrack);
+    final response = await Get.find<WaterTrackerRepository>().addNewWaterTrack(waterTrack);
+    response.fold((error) {
+
+    }, (id) {
+      waterTrack.id = id;
+      Get.find<WaterTrackerHistoryController>().addWaterConsume(waterTrack);
+    });
     update();
   }
 

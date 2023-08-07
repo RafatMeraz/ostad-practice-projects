@@ -25,8 +25,11 @@ class WaterTrackerHistoryController extends GetxController {
   }
 
   Future<void> getWaterTracks(int date, int month, int year) async {
-    _list = await Get.find<WaterTrackerRepository>()
+    final response = await Get.find<WaterTrackerRepository>()
         .getDailyWaterTrack(date, month, year);
+    response.fold((error) {}, (listOfWaterTrack) {
+      _list = listOfWaterTrack;
+    });
     int totalAmount = 0;
     for (WaterTrack track in _list) {
       totalAmount += track.amount;

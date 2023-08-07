@@ -18,6 +18,7 @@ dependencies:
   sqflite: ^2.2.8+4
   intl: ^0.18.1
   lottie: ^2.4.0
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
