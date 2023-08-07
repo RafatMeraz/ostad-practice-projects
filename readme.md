@@ -22,6 +22,12 @@ This repo is a collection of basic applications serves as a valuable resource fo
   <p>Fun practice project. Generate gradient on button tap. Tap on color code to copy.</p>
   <img src="https://github.com/nbakh16/ostad-practice-projects/assets/38786346/cc50cd43-8a93-417c-9677-ee26096ba2cb" alt="random-gradient-gif" width="250">
  </details>
+ 
+ <details>
+ <summary> H2O </summary>
+  <p>H2O is a mobile application that tracks your regular water consumptions.</p>
+  <img src="https://github.com/RafatMeraz/ostad-practice-projects/assets/53111065/4b1cacd9-1292-428f-b97b-a7ea97f6f476" alt="h20" width="250">
+ </details>
 
 ## To clone the "Ostad Practice Projects" repository
 
